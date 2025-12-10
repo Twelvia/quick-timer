@@ -24,39 +24,39 @@ body {
 #sun-wrap {
   position: absolute;
   left: 50%;
-  bottom: -25vh;
+  bottom: -35vh;
   transform: translateX(-50%);
   transition: bottom 0.4s linear;
   pointer-events: none;
-  z-index: 7;
+  z-index: 9;
 }
 
 #sun {
   position: absolute;
   left: 50%;
   bottom: 0;
-  width: var(--sun-size, 140px);
-  height: var(--sun-size, 140px);
-  margin-left: calc(var(--sun-size, 140px) / -2);
+  width: var(--sun-size, 420px);
+  height: var(--sun-size, 420px);
+  margin-left: calc(var(--sun-size, 420px) / -2);
   border-radius: 50%;
-  background: radial-gradient(circle at 30% 30%, #fff7c7, #ffd25a 60%, #ffba29 100%);
-  box-shadow: 0 0 40px rgba(255, 188, 38, 0.7), 0 0 80px rgba(255, 188, 38, 0.35);
+  background: radial-gradient(circle at 30% 30%, #fffbe0, #ffd972 60%, #ffb52a 100%);
+  box-shadow: 0 0 70px rgba(255, 193, 55, 0.9), 0 0 140px rgba(255, 193, 55, 0.55);
   transition: transform 0.4s ease-out, box-shadow 0.4s ease-out;
-  opacity: 0.6;
+  opacity: 0.85;
 }
 
 #sun-rays {
   position: absolute;
   left: 50%;
   bottom: 0;
-  width: var(--sun-ray-size, 260px);
-  height: var(--sun-ray-size, 260px);
-  margin-left: calc(var(--sun-ray-size, 260px) / -2);
+  width: var(--sun-ray-size, 756px);
+  height: var(--sun-ray-size, 756px);
+  margin-left: calc(var(--sun-ray-size, 756px) / -2);
   border-radius: 50%;
   overflow: hidden;
-  filter: blur(2px);
-  opacity: 0;
-  transform: scale(0.8);
+  filter: blur(1px);
+  opacity: 0.25;
+  transform: scale(0.9);
   transition: opacity 0.4s ease-out, transform 0.4s ease-out;
 }
 
@@ -68,7 +68,7 @@ body {
   width: 120%;
   height: 120%;
   border-radius: 50%;
-  background: repeating-conic-gradient(rgba(255, 220, 120, 0.35) 0deg, rgba(255, 220, 120, 0.35) 12deg, rgba(255, 220, 120, 0) 28deg, rgba(255, 220, 120, 0) 40deg);
+  background: repeating-conic-gradient(rgba(255, 225, 120, 0.55) 0deg, rgba(255, 225, 120, 0.55) 12deg, rgba(255, 225, 120, 0) 28deg, rgba(255, 225, 120, 0) 40deg);
   animation: spin 16s linear infinite;
 }
 
@@ -85,8 +85,8 @@ body {
   position: absolute;
   left: 50%;
   bottom: 8vh;
-  transform: translateX(-50%) scale(0.6);
-  font-size: 110px;
+  transform: translateX(-50%) scale(0.7);
+  font-size: 90px;
   opacity: 0;
   transition: opacity 0.4s ease-out, transform 0.4s ease-out;
   filter: drop-shadow(0 8px 4px rgba(0, 0, 0, 0.2));
