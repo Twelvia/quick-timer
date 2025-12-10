@@ -24,7 +24,7 @@ body {
 #sun-wrap {
   position: absolute;
   left: 50%;
-  bottom: -35vh;
+  bottom: -60vh;
   transform: translateX(-50%);
   transition: bottom 0.4s linear;
   pointer-events: none;
@@ -35,9 +35,9 @@ body {
   position: absolute;
   left: 50%;
   bottom: 0;
-  width: var(--sun-size, 210px);
-  height: var(--sun-size, 210px);
-  margin-left: calc(var(--sun-size, 210px) / -2);
+  width: var(--sun-size, 105px);
+  height: var(--sun-size, 105px);
+  margin-left: calc(var(--sun-size, 105px) / -2);
   border-radius: 50%;
   background: radial-gradient(circle at 30% 30%, #fffbe0, #ffd972 60%, #ffb52a 100%);
   box-shadow: 0 0 70px rgba(255, 193, 55, 0.9), 0 0 140px rgba(255, 193, 55, 0.55);
@@ -49,9 +49,9 @@ body {
   position: absolute;
   left: 50%;
   bottom: 0;
-  width: var(--sun-ray-size, 378px);
-  height: var(--sun-ray-size, 378px);
-  margin-left: calc(var(--sun-ray-size, 378px) / -2);
+  width: var(--sun-ray-size, 189px);
+  height: var(--sun-ray-size, 189px);
+  margin-left: calc(var(--sun-ray-size, 189px) / -2);
   border-radius: 50%;
   overflow: hidden;
   filter: blur(1px);
@@ -194,6 +194,7 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
+  cursor: pointer;
   z-index: 5;
 }
 
