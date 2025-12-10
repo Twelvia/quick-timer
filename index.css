@@ -251,6 +251,42 @@ body {
   width: 70px;
 }
 
+#custom-countdown-form {
+  position: absolute;
+  bottom: 55px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 6px 10px;
+  border-radius: 6px;
+  background: rgba(255, 255, 255, 0.85);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.18);
+  z-index: 12;
+}
+
+#custom-countdown {
+  width: 150px;
+  border: 1px solid #b1c5d6;
+  border-radius: 4px;
+  padding: 6px 8px;
+  font-size: 14px;
+}
+
+#apply-countdown {
+  height: 32px;
+  line-height: 18px;
+  padding: 6px 12px;
+}
+
+#countdown-status {
+  min-width: 120px;
+  font-size: 13px;
+  color: #2b6e3f;
+  font-weight: 600;
+}
+
 #min10 {
   margin-left: -270px;
 }
