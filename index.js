@@ -48,6 +48,9 @@ adjust = function(it, v){
       clearInterval(handler);
     }
     handler = null;
+    start = null;
+    latency = 0;
+    stopBy = null;
     isBlink = false;
     isLight = true;
     $('#timer').css('color', '#fff');
