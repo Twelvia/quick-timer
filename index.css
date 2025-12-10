@@ -28,28 +28,30 @@ body {
   transform: translateX(-50%);
   transition: bottom 0.4s linear;
   pointer-events: none;
+  z-index: 7;
 }
 
 #sun {
   position: absolute;
   left: 50%;
   bottom: 0;
-  width: 140px;
-  height: 140px;
-  margin-left: -70px;
+  width: var(--sun-size, 140px);
+  height: var(--sun-size, 140px);
+  margin-left: calc(var(--sun-size, 140px) / -2);
   border-radius: 50%;
   background: radial-gradient(circle at 30% 30%, #fff7c7, #ffd25a 60%, #ffba29 100%);
   box-shadow: 0 0 40px rgba(255, 188, 38, 0.7), 0 0 80px rgba(255, 188, 38, 0.35);
   transition: transform 0.4s ease-out, box-shadow 0.4s ease-out;
+  opacity: 0.6;
 }
 
 #sun-rays {
   position: absolute;
   left: 50%;
   bottom: 0;
-  width: 260px;
-  height: 260px;
-  margin-left: -130px;
+  width: var(--sun-ray-size, 260px);
+  height: var(--sun-ray-size, 260px);
+  margin-left: calc(var(--sun-ray-size, 260px) / -2);
   border-radius: 50%;
   overflow: hidden;
   filter: blur(2px);
@@ -187,6 +189,7 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
+  z-index: 5;
 }
 
 #hide,
