@@ -21,17 +21,90 @@ body {
   overflow: hidden;
 }
 
-#sun {
+#sun-wrap {
   position: absolute;
   left: 50%;
   bottom: -25vh;
+  transform: translateX(-50%);
+  transition: bottom 0.4s linear;
+  pointer-events: none;
+}
+
+#sun {
+  position: absolute;
+  left: 50%;
+  bottom: 0;
   width: 140px;
   height: 140px;
   margin-left: -70px;
   border-radius: 50%;
   background: radial-gradient(circle at 30% 30%, #fff7c7, #ffd25a 60%, #ffba29 100%);
   box-shadow: 0 0 40px rgba(255, 188, 38, 0.7), 0 0 80px rgba(255, 188, 38, 0.35);
-  transition: bottom 0.4s linear;
+  transition: transform 0.4s ease-out, box-shadow 0.4s ease-out;
+}
+
+#sun-rays {
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  width: 260px;
+  height: 260px;
+  margin-left: -130px;
+  border-radius: 50%;
+  overflow: hidden;
+  filter: blur(2px);
+  opacity: 0;
+  transform: scale(0.8);
+  transition: opacity 0.4s ease-out, transform 0.4s ease-out;
+}
+
+#sun-rays::before {
+  content: "";
+  position: absolute;
+  top: -10%;
+  left: -10%;
+  width: 120%;
+  height: 120%;
+  border-radius: 50%;
+  background: repeating-conic-gradient(rgba(255, 220, 120, 0.35) 0deg, rgba(255, 220, 120, 0.35) 12deg, rgba(255, 220, 120, 0) 28deg, rgba(255, 220, 120, 0) 40deg);
+  animation: spin 16s linear infinite;
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+#rooster {
+  position: absolute;
+  left: 50%;
+  bottom: 8vh;
+  transform: translateX(-50%) scale(0.6);
+  font-size: 110px;
+  opacity: 0;
+  transition: opacity 0.4s ease-out, transform 0.4s ease-out;
+  filter: drop-shadow(0 8px 4px rgba(0, 0, 0, 0.2));
+  pointer-events: none;
+  z-index: 8;
+}
+
+#rooster.show {
+  opacity: 1;
+  transform: translateX(-50%) scale(1);
+  animation: bob 0.8s ease-in-out infinite alternate;
+}
+
+@keyframes bob {
+  from {
+    transform: translateX(-50%) translateY(0) scale(1);
+  }
+  to {
+    transform: translateX(-50%) translateY(-10px) scale(1.05);
+  }
 }
 
 .cloud {
