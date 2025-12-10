@@ -35,9 +35,9 @@ body {
   position: absolute;
   left: 50%;
   bottom: 0;
-  width: var(--sun-size, 420px);
-  height: var(--sun-size, 420px);
-  margin-left: calc(var(--sun-size, 420px) / -2);
+  width: var(--sun-size, 210px);
+  height: var(--sun-size, 210px);
+  margin-left: calc(var(--sun-size, 210px) / -2);
   border-radius: 50%;
   background: radial-gradient(circle at 30% 30%, #fffbe0, #ffd972 60%, #ffb52a 100%);
   box-shadow: 0 0 70px rgba(255, 193, 55, 0.9), 0 0 140px rgba(255, 193, 55, 0.55);
@@ -49,9 +49,9 @@ body {
   position: absolute;
   left: 50%;
   bottom: 0;
-  width: var(--sun-ray-size, 756px);
-  height: var(--sun-ray-size, 756px);
-  margin-left: calc(var(--sun-ray-size, 756px) / -2);
+  width: var(--sun-ray-size, 378px);
+  height: var(--sun-ray-size, 378px);
+  margin-left: calc(var(--sun-ray-size, 378px) / -2);
   border-radius: 50%;
   overflow: hidden;
   filter: blur(1px);
@@ -84,28 +84,33 @@ body {
 #rooster {
   position: absolute;
   left: 50%;
-  bottom: 8vh;
-  transform: translateX(-50%) scale(0.7);
-  font-size: 90px;
+  bottom: calc(var(--sun-size, 210px) + 10px);
+  transform: translateX(-50%);
+  font-size: 68px;
   opacity: 0;
-  transition: opacity 0.4s ease-out, transform 0.4s ease-out;
-  filter: drop-shadow(0 8px 4px rgba(0, 0, 0, 0.2));
+  transition: opacity 0.25s ease-out;
+  filter: drop-shadow(0 6px 4px rgba(0, 0, 0, 0.15));
   pointer-events: none;
-  z-index: 8;
+  z-index: 11;
 }
 
 #rooster.show {
   opacity: 1;
-  transform: translateX(-50%) scale(1);
-  animation: bob 0.8s ease-in-out infinite alternate;
 }
 
-@keyframes bob {
-  from {
-    transform: translateX(-50%) translateY(0) scale(1);
+#rooster.flap {
+  animation: flap 0.55s ease-in-out 3 forwards;
+}
+
+@keyframes flap {
+  0% {
+    transform: translateX(-50%) translateY(0) rotate(0deg);
   }
-  to {
-    transform: translateX(-50%) translateY(-10px) scale(1.05);
+  50% {
+    transform: translateX(-50%) translateY(8px) rotate(-10deg);
+  }
+  100% {
+    transform: translateX(-50%) translateY(0) rotate(10deg);
   }
 }
 
