@@ -194,12 +194,12 @@ updateSunAppearance = function(progress){
   if (!sun || !sunRays) {
     return;
   }
-  scale = 1 + progress * 0.6;
-  rayScale = 0.9 + progress * 0.8;
-  glowStrength = 40 + progress * 60;
+  scale = 1.1 + progress * 0.9;
+  rayScale = 1 + progress * 0.8;
+  glowStrength = 70 + progress * 90;
   sun.style.transform = "scale(" + scale + ")";
-  sun.style.boxShadow = "0 0 " + glowStrength + "px rgba(255, 188, 38, 0.8), 0 0 " + glowStrength * 1.6 + "px rgba(255, 188, 38, 0.4)";
-  sunRays.style.opacity = 0.15 + progress * 0.7 + "";
+  sun.style.boxShadow = "0 0 " + glowStrength + "px rgba(255, 193, 55, 0.9), 0 0 " + glowStrength * 1.8 + "px rgba(255, 193, 55, 0.5)";
+  sunRays.style.opacity = 0.25 + progress * 0.7 + "";
   return sunRays.style.transform = "scale(" + rayScale + ")";
 };
 updateSunSize = function(fontSize){
@@ -208,8 +208,8 @@ updateSunSize = function(fontSize){
     return;
   }
   root = document.documentElement.style;
-  sunSize = Math.max(80, Math.min(fontSize * 0.5, 260));
-  raySize = sunSize * 1.8;
+  sunSize = Math.max(180, Math.min(fontSize * 1.5, 780));
+  raySize = sunSize * 1.9;
   root.setProperty('--sun-size', sunSize + "px");
   return root.setProperty('--sun-ray-size', raySize + "px");
 };
