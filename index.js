@@ -273,7 +273,7 @@ updateSunPosition = function(remaining){
   if (progress > 1) {
     progress = 1;
   }
-  target = -60 + progress * 40;
+  target = -60 + progress * 110;
   sunWrap.style.bottom = target + "vh";
   return updateSunAppearance(progress);
 };
